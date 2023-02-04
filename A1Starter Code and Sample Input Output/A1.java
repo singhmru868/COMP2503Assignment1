@@ -30,7 +30,7 @@ public class A1 {
 	}
 
 	public void run() {
-		Scanner input = new Scanner(System.in);
+		Scanner kbd = new Scanner(System.in);
 		System.out.println("Output");
         System.out.print("More Output");
 		readInput();
@@ -52,6 +52,22 @@ public class A1 {
 				- if this avenger has already been mentioned, increase the frequency count for the object already in the list.
 				- if this avenger has not been mentioned before, add the newly created avenger to the list, remember to set the frequency.
 		*/ 
+		Scanner kbd = new Scanner(System.in);
+		
+		while(kbd.hasNext()) {
+			
+			String input = kbd.next();
+			input=input.trim().toLowerCase().replaceAll("'", "").replaceAll(",", "").replace('"', ' ').replaceAll(" ", "");
+			
+			if(input != null) {
+				Avenger avg = new Avenger();
+				avg.setHeroName(input);
+				avg.setHeroAlias("");
+				avg.setFrequency(1);
+				avengersArrayList.add(avg);
+				}
+		}
+		
 	}
 
 	/**

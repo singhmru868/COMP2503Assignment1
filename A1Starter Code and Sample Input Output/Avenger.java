@@ -47,10 +47,10 @@ public class Avenger implements Comparable <Avenger>{
         Avenger avenger = (Avenger) o;
         
         return Objects.equals(heroAlias, avenger.heroAlias);
-    
-   
+      
 
 	}
+	
 	
 	// TODO Auto-generated method stub
     public String toString() {
