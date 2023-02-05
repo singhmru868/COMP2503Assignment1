@@ -57,15 +57,38 @@ public class A1 {
 		while(kbd.hasNext()) {
 			
 			String input = kbd.next();
-			input=input.trim().toLowerCase().replaceAll("'", "").replaceAll(",", "").replace('"', ' ').replaceAll(" ", "");
+			input=input.trim().toLowerCase().replaceAll("[0-9]","").replaceAll("'", "").replaceAll(",", "").replaceAll("-", "").replaceAll(";", "").replace('"', ' ').replaceAll(" ", "");
+			boolean existsInList =true;
 			
-			if(input != null) {
+			for (Avenger a : avengersArrayList) {
+				
+				if(input == null) {
+					break;
+					
+				} else if (input.equals(a.getHeroAlias()) || (a.getHeroName().contains(input))) {
+					
+					int freq;
+					freq=a.getFrequency();
+					freq+=1;
+					a.setFrequency(freq);
+					existsInList=true;
+					
+				} else {
+					existsInList=false;
+				}
+				
+			}
+			
+			if(existsInList = false) {
 				Avenger avg = new Avenger();
 				avg.setHeroName(input);
 				avg.setHeroAlias("");
 				avg.setFrequency(1);
 				avengersArrayList.add(avg);
-				}
+				break;
+			}
+			
+			
 		}
 		
 	}
