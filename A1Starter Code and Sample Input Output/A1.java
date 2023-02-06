@@ -65,7 +65,7 @@ public class A1 {
 				if(input == null) {
 					break;
 					
-				} else if (input.equals(a.getHeroAlias()) || (a.getHeroName().contains(input))) {
+				} else if (a.getHeroAlias().contains(input) || (a.getHeroName().contains(input))) {
 					
 					int freq;
 					freq=a.getFrequency();
